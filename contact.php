@@ -1,5 +1,5 @@
 <?php
-require_once 'conexión.php'; // CORREGIDO: sin tilde
+require_once 'conexión.php'; 
 secureSession();
 
 if (!isset($_SESSION['user_id'])) {
@@ -87,8 +87,8 @@ $conn->close();
         }
 
         .contact-photo img {
-            width: 150px;   /* pedido */
-            height: 100px;   /* pedido */
+            width: 150px;   
+            height: 100px;   
             object-fit: cover;
             border-radius: 4px;
         }
