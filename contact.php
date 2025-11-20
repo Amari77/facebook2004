@@ -78,7 +78,6 @@ $conn->close();
             </div>
 
 <style>
-        /* Estilo para colocar la foto y el texto lado a lado */
         .contact-wrapper-left{
             display: flex;
             align-items: left;

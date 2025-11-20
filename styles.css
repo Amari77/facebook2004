@@ -624,8 +624,8 @@ a:hover {
 
 .contact-wrapper-right {
     display: flex;
-    justify-content: space-between; /* texto izq — foto der */
-    align-items: center; /* <-- CORRECTO */
+    justify-content: space-between; 
+    align-items: center; 
     margin-top: 20px;
     gap: 20px;
 }

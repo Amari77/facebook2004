@@ -42,7 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($result->num_rows > 0) {
             $error = 'This email is already registered.';
         } else {
-            // Insertar nuevo usuario (contraseña en texto plano como se solicitó)
             $stmt = $conn->prepare("INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)");
             $stmt->bind_param("ssss", $firstName, $lastName, $email, $password);
             

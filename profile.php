@@ -32,7 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $favoriteMovies = trim($_POST['favorite_movies']);
     $favoriteBooks = trim($_POST['favorite_books']);
     
-    // Manejar subida de avatar
     $avatarName = $user['avatar'];
     if (isset($_FILES['avatar']) && $_FILES['avatar']['error'] == 0) {
         $allowed = ['jpg', 'jpeg', 'png', 'gif'];
@@ -40,7 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
         
         if (in_array($ext, $allowed) && $_FILES['avatar']['size'] < 5000000) {
-            // Corregir variable de sesión y generar nombre único
             $newName = 'avatar_' . $_SESSION['user_id'] . '_' . time() . '.' . $ext;
             if (move_uploaded_file($_FILES['avatar']['tmp_name'], 'uploads/' . $newName)) {
                 $avatarName = $newName;

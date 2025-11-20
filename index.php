@@ -25,14 +25,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             die("Error de conexión a la base de datos: " . mysqli_connect_error());
         }
 
-        // Consulta SIN columna avatar
         $sql = "SELECT id, first_name, last_name, password AS db_password 
                 FROM users 
                 WHERE email = ?";
 
         $stmt = $conn->prepare($sql);
 
-        // Si falla el prepare, mostrar error exacto:
         if (!$stmt) {
             die("Error en prepare(): " . $conn->error);
         }
@@ -47,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             $user = $result->fetch_assoc();
 
-            // Si NO usas hashing (contraseña en texto plano)
+            
             if ($password === $user['db_password']) {
 
                 // Guardar datos en sesión
@@ -143,13 +141,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             text-decoration: underline;
         }
         
-        /* Content Area */
+       
         .content-wrapper {
             display: flex;
             min-height: 500px;
         }
-        
-        /* Left Sidebar - Login */
+       
         .sidebar-login {
             width: 280px;
             padding: 20px;
@@ -231,7 +228,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             font-size: 11px;
         }
         
-        /* Main Content */
+       
         .main-content {
             flex: 1;
             padding: 30px 40px;
@@ -287,7 +284,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             font-weight: bold;
         }
         
-        /* Footer */
+        
         .footer {
             background: #f7f7f7;
             padding: 15px;
@@ -332,7 +329,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         
         <!-- Content -->
         <div class="content-wrapper">
-            <!-- Left Sidebar - Login Form -->
+           
             <div class="sidebar-login">
                 <div class="login-box">
                     <h3>Login</h3>
